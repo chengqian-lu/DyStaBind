@@ -4,7 +4,7 @@ Codes for our paper *Dynamic and static characterization for predicting protein-
 
 ## Overview
 
-![](.\assets\ComparisonStudy(Static).png)
+![StaticPrediction](.\assets\ComparisonStudy(Static).png)
 
 RNA-binding proteins (RBPs) play indispensable roles in fundamental biological processes including RNA splicing, sequence editing and translational control. These proteins bind to RNA through a sophisticated interplay of sequence specificity, structural complementarity, and dynamic conformational adaptations, mediated by specialized binding domains such as RNA recognition motifs (RRMs) and K homology (KH) domains. The binding modalities of RBPs exhibit functional diversity, encompassing both stable binding and dynamic binding. Investigating RBPs' regulatory mechanisms and binding rules is essential for learning their biological roles. To address the challenges posed by the vast RBP repertoire (representing ~10\% of the human proteome), high-throughput experimental and computational approaches have emerged as powerful tools for binding site characterization. Although the experimental approaches offer precise binding site detection, their utility in large-scale studies is constrained by substantial time investments and prohibitive costs. 
 
@@ -14,7 +14,7 @@ Based on the cellular environmental conditions, protein-RNA interactions (PRIs) 
 
 We proposes a multi-view framework that combines multi-scale CNNs with cross-attention mechanisms to unify RNA's dynamic and static characteristics for PRIs prediction. The framework characterizes RNA features through three complementary perspectives: dynamic sequence embeddings, dynamic structural representations, and static conformational attributes. These multi-view features are processed in parallel via three convolutional neural networks with distinct kernel sizes to extract multi-scale latent motifs. Cross-attention modules subsequently perform iterative pairwise interaction modeling among the three sets of CNN-processed features. The integrated representations are then fed into a pyramid-shaped context-aware classifier for the final prediction of PRIs.
 
-![](.\assets\DyStaBind.png)
+![DyStaBind](.\assets\DyStaBind.png)
 
 ## Release
 
@@ -25,8 +25,8 @@ We proposes a multi-view framework that combines multi-scale CNNs with cross-att
 - [Install](https://github.com/chengqian-lu/DyStaBind#install)
 - [Dataset](https://github.com/chengqian-lu/DyStaBind#Dataset)
 - [Train](https://github.com/chengqian-lu/DyStaBind#train)
-- [Static Prediction](https://github.com/chengqian-lu/DyStaBind#Static Prediction)
-- [Dynamic Prediction](https://github.com/chengqian-lu/DyStaBind#Dynamic Prediction)
+- [StaticPrediction](https://github.com/chengqian-lu/DyStaBind#StaticPrediction)
+- [DynamicPrediction](https://github.com/chengqian-lu/DyStaBind#DynamicPrediction)
 
 ## Install
 
@@ -46,13 +46,13 @@ pip install -r requirements.txt
 python ./main.py --data_file TITA_Hela --data_path ./dataset --model_save_path ./results/model --output_dir ./results/output --BERT_model_path ./BERT_Model --z_curve --icSHAPE --BERTEmbedding --train
 ```
 
-## Static Prediction
+## StaticPrediction
 
 ```python
 python ./main.py --data_file TITA_Hela --data_path ./dataset --model_save_path ./results/model --output_dir ./results/staticPrediction --BERT_model_path ./BERT_Model --z_curve --icSHAPE --BERTEmbedding --validate
 ```
 
-## Dynamic Prediction
+## DynamicPrediction
 
 ```python
 python ./main.py --data_file TITA_Hela --data_path ./dataset --model_save_path ./results/model --output_dir ./results/dynamicPrediction --BERT_model_path ./BERT_Model --z_curve --icSHAPE --BERTEmbedding --dynamic_validate
