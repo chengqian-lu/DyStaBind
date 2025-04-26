@@ -4,7 +4,7 @@ Codes for our paper *Dynamic and static characterization for predicting protein-
 
 ## Overview
 
-![StaticPrediction](.\assets\ComparisonStudy(Static).png)
+![StaticPrediction](./assets/ComparisonStudy(Static).png)
 
 RNA-binding proteins (RBPs) play indispensable roles in fundamental biological processes including RNA splicing, sequence editing and translational control. These proteins bind to RNA through a sophisticated interplay of sequence specificity, structural complementarity, and dynamic conformational adaptations, mediated by specialized binding domains such as RNA recognition motifs (RRMs) and K homology (KH) domains. The binding modalities of RBPs exhibit functional diversity, encompassing both stable binding and dynamic binding. Investigating RBPs' regulatory mechanisms and binding rules is essential for learning their biological roles. To address the challenges posed by the vast RBP repertoire (representing ~10\% of the human proteome), high-throughput experimental and computational approaches have emerged as powerful tools for binding site characterization. Although the experimental approaches offer precise binding site detection, their utility in large-scale studies is constrained by substantial time investments and prohibitive costs. 
 
@@ -14,7 +14,7 @@ Based on the cellular environmental conditions, protein-RNA interactions (PRIs) 
 
 We proposes a multi-view framework that combines multi-scale CNNs with cross-attention mechanisms to unify RNA's dynamic and static characteristics for PRIs prediction. The framework characterizes RNA features through three complementary perspectives: dynamic sequence embeddings, dynamic structural representations, and static conformational attributes. These multi-view features are processed in parallel via three convolutional neural networks with distinct kernel sizes to extract multi-scale latent motifs. Cross-attention modules subsequently perform iterative pairwise interaction modeling among the three sets of CNN-processed features. The integrated representations are then fed into a pyramid-shaped context-aware classifier for the final prediction of PRIs.
 
-![DyStaBind](.\assets\DyStaBind.png)
+![DyStaBind](./assets/DyStaBind.png)
 
 ## Release
 
